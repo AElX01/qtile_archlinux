@@ -1,0 +1,13 @@
+@import "/usr/share/rofi/themes/onedark.rasi"
+
+configuration {
+    // Enables the display of icons
+    show-icons: true;
+
+    // Set the icon theme to Papirus
+    icon-theme: "WhiteSur";
+
+    // Set the font to monospace with size 12
+    font: "monospace 12"; 
+}
+
