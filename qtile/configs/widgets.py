@@ -96,7 +96,7 @@ main_monitor_widgets = [
 
     powerline("#8c7eff", "#c07eff"),
 
-    widget.BatteryIcon(**colors("#c07eff", "#212121"), theme_path='/usr/share/icons/WhiteSur-dark/status/16', scale=1.8, update_interval=1),
+    # widget.BatteryIcon(**colors("#c07eff", "#212121"), scale=1.8, update_interval=1),
 
     widget.Battery(
         **colors("#c07eff", "#212121"),

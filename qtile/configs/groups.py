@@ -10,10 +10,11 @@ groups = [
         Group("1", label="󰌢"),
         Group("2", label="󰁌"),
         Group("3", label="󰈹", matches=[Match(wm_class="firefox")]), 
-        Group("4", label="", matches=[Match(wm_class="code"), Match(wm_class="sublime_text"), Match(wm_class="jetbrains-idea-ce")]),
+        Group("4", label="", matches=[Match(wm_class="code"), Match(wm_class="code"), Match(wm_class="jetbrains-idea-ce")]),
         Group("5", label="󰍳", matches=[Match(wm_class="Minecraft Launcher")]),
         Group("6", label="󰓇", matches=[Match(wm_class="spotify")]),
         Group("7", label="", matches=[Match(wm_class="virt-manager")]),
+        Group("8", label="", matches=[Match(wm_class="lxterminal")])
         ]
 
 

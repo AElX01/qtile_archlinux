@@ -66,9 +66,7 @@ keys = [
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
 
     # Take screenshots
-    # Key([script_variables.get("mod")], "s", lazy.spawn("scrot -s | xclip -selection clipboard -target image/png"), desc="take a screenshots")
-    Key([], "Print", lazy.spawn("scrot -s"), desc="take a screenshots")
-]
+    Key([], "Print", lazy.spawn("bash -c \"maim -s -o | xclip -selection clipboard -t image/png -i\""))]
 
 # Add key bindings to switch VTs in Wayland.
 for vt in range(1, 8):
