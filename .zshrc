@@ -2,7 +2,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 
-
+neofetch
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -21,9 +21,6 @@ source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
 
 # path
 export PATH="$PATH:/opt/nvim-linux64/bin"
-
-# neofetch
-neofetch
 
 # necessary line to avoid error messages during neofetch's execution
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
