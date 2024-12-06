@@ -6,19 +6,19 @@ My secure archlinux **qtile** dotfiles with qtile's modified source code to make
 
 ## DESKTOP
 
-![](image.png)
+![](assets/image.png)
 
 ## TERMINAL
 
-![](image-1.png)
+![](assets/image-1.png)
 
 ## RANGER
 
-![](image-2.png)
+![](assets/image-2.png)
 
 ## BAR
 
-![](image-3.png)
+![](assets/image-3.png)
 
 # F E A T U R E S
 
