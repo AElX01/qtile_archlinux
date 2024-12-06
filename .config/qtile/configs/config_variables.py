@@ -11,5 +11,5 @@ script_variables = dict(
     ethernet_interface = system("ifconfig | grep '^e' | awk -F ':' '{print $1}'"),
     ethernet_connection = system("ifconfig $(ifconfig | grep '^e' | awk -F ':' '{print $1}') | grep inet"),
     wireless_connection = system("ifconfig $(ifconfig | grep '^w' | awk -F ':' '{print $1}') | grep inet"),
-    wallpaper_path = "/home/hazor/Pictures/wallpapers/other/cyber.jpg"
+    wallpaper_path = "../arch.png" # JUST, CHANGE THIS LINE ;)
 )

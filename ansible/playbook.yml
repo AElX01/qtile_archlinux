@@ -1,0 +1,41 @@
+- name: Install arch qtile environment
+  hosts: localhost
+  connection: local
+  become: true
+  vars:
+    user: hax00r
+
+  tasks:
+    - name: Clone dotfiles
+      ansible.builtin.git:
+        repo: "https://github.com/AElX01/qtile_rice.git"
+        dest: "/home/{{ user }}/"
+        version: main
+    - name: Move dotfiles to correct location
+      ansible.builtin.copy:
+        src: "/home/{{ user }}/qtile_rice/.config"
+        dest: "/home/{{ user }}/.config"
+        owner: "{{ user }}"
+        group: "{{ user }}"
+        mode: '0755'
+        remote_src: true
+    - name: Move zsh config file to its location
+      ansible.builtin.copy:
+        src: "/home/{{ user }}/qtile_rice/.zshrc"
+        dest: "/home/{{ user }}/.zshrc"
+        owner: "{{ user }}"
+        group: "{{ user }}"
+        mode: '0644'
+    - name: Move p10k config file to its location
+      ansible.builtin.copy:
+        src: "/home/{{ user }}/qtile_rice/.p10k.zsh"
+        dest: "/home/{{ user }}/.p10k.zsh"
+        owner: "{{ user }}"
+        group: "{{ user }}"
+        mode: '0644'
+    - name: Grant executable permissions to package installation script
+      ansible.builtin.file:
+        path: "/home/{{ user }}/qtile_rice/ansible/install-packages.sh"
+        mode: '0755'
+    - name: Install packages
+      ansible.builtin.command: "/home/{{ user }}/qtile_rice/ansible/install-packages.sh"

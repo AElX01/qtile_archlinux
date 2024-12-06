@@ -1,0 +1,5 @@
+falchion-shutdown
+python-pulsectl
+python-pulsectl-asyncio
+python-screeninfo
+zsh-sudo-git
