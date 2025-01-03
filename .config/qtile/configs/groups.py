@@ -7,14 +7,12 @@ from .config_variables import script_variables
 
 
 groups = [ 
-        Group("1", label="󰌢"),
-        Group("2", label="󰁌"),
-        Group("3", label="󰈹", matches=[Match(wm_class="firefox")]), 
-        Group("4", label="", matches=[Match(wm_class="code"), Match(wm_class="code"), Match(wm_class="jetbrains-idea-ce")]),
-        Group("5", label="󰍳", matches=[Match(wm_class="Minecraft Launcher")]),
-        Group("6", label="󰓇", matches=[Match(wm_class="spotify")]),
-        Group("7", label="", matches=[Match(wm_class="virt-manager")]),
-        Group("8", label="", matches=[Match(wm_class="lxterminal")])
+        Group("1", label="1"),
+        Group("2", label="2"),
+        Group("3", label="3", matches=[Match(wm_class="firefox")]), 
+        Group("4", label="4"),
+        Group("5", label="5", matches=[Match(wm_class="virt-manager")]),
+        Group("6", label="6", matches=[Match(wm_class="lxterminal")]),
         ]
 
 

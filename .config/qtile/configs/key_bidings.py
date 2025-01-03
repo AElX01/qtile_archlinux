@@ -1,5 +1,5 @@
-from libqtile.lazy import lazy
 from libqtile.config import Key 
+from libqtile.lazy import lazy
 from .config_variables import script_variables
 from libqtile import qtile
 
@@ -10,7 +10,7 @@ keys = [
     Key([script_variables.get("mod")], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([script_variables.get("mod")], "j", lazy.layout.down(), desc="Move focus down"),
     Key([script_variables.get("mod")], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([script_variables.get("mod")], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([script_variables.get("mod"), "shift"], "space", lazy.layout.next(), desc="Move window focus to other window"),
 
     # Window movements
     Key([script_variables.get("mod"), "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
@@ -66,7 +66,11 @@ keys = [
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
 
     # Take screenshots
-    Key([], "Print", lazy.spawn("bash -c \"maim -s -o | xclip -selection clipboard -t image/png -i\""))]
+    Key([], "Print", lazy.spawn("bash -c \"maim -s -o | xclip -selection clipboard -t image/png -i\"")),
+    
+    # change keyboard layout
+    Key([script_variables.get("mod")], "space", lazy.widget["keyboardlayout"].next_keyboard(), desc="Next keyboard layout.")
+    ]
 
 # Add key bindings to switch VTs in Wayland.
 for vt in range(1, 8):

@@ -35,7 +35,7 @@ def icon(text, font, fontsize, padding, bg, fg):
 
 def powerline(bg, fg):
     return widget.TextBox(
-        text="󰍞",
+        text="",
         font="Hack Nerd Font",
         fontsize=80,
         padding=-16,
@@ -44,7 +44,7 @@ def powerline(bg, fg):
 
 def workspaces():
     return [widget.GroupBox(
-    font="Hack Nerd Font",
+    font="SourceCodePro",
     fontsize=15,
     margin_y=3,
     margin_x=3,
@@ -54,52 +54,58 @@ def workspaces():
     active="#ffffff",
     inactive="#272727",
     rounded=False, 
-    highlight_method="block",
-    this_current_screen_border="#6e0097",
+    highlight_method="line",
     this_screen_border="#ffffff",
+    this_current_screen_border="#ffffff",
     background="#000000"),
     ]
 
 
 main_monitor_widgets = [
-    icon("  ", "Hack Nerd Font", 17, 20, "#000000", "#1793d1"),
+    icon(" ", "SourceCodePro", 17, 20, "#000000", "#2e2e2e"),
+
+    powerline("#000000", "#000000"),
+    
+    icon("", "Hack Nerd Font", 15, 10, "#000000", "#2e2e2e"),
+
+    widget.KeyboardLayout(**colors("#000000", "#b0b0b0"), configured_keyboards = ['us', 'latam'], font='SourceCodePro'),
+
+    powerline("#000000", "#000000"),
+
+    widget.LaunchBar(),
+
+    space(),
 
     *workspaces(),
 
     space(),
 
-    powerline("#000000", "#ffd47e"),
+    powerline("#000000", "#000000"),
 
-    icon("󰮯", "Hack Nerd Font", 15, 10, "#ffd47e", "#212121"), 
+    icon("󰮯", "Hack Nerd Font", 15, 10, "#000000", "#2e2e2e"), 
     
     widget.CheckUpdates(
-        background="#ffd47e",
-        colour_have_updates="#ff3333",
-        colour_no_updates="#212121",
+        font='SourceCodePro',
+        background="#000000",
+        colour_have_updates="#ffffff",
+        colour_no_updates="#2e2e2e",
         no_update_string='0   ',
         display_format='{updates}',
         update_interval=1,
         custom_command='checkupdates',
     ),
 
-    powerline("#ffd47e", "#ff7e7e"),
+    powerline("#000000", "#000000"),
     
     #icon(network_icon(), "Hack Nerd Font", 15, 10, "#ff7e7e", "#212121"),
 
-    widget.Net(interface=active_interface(), update_interval=1, **colors("#ff7e7e", "#212121"), format=f'{network_icon()}  ' + '{interface}: {down:6.2f}{down_suffix:<2}↓↑{up:6.2f}{up_suffix:<2}'),
+    # widget.Net(interface=active_interface(), update_interval=1, **colors("#000000", "#464646"), format=f'' + '{interface}: {down:6.2f}{down_suffix:<2}↓↑{up:6.2f}{up_suffix:<2}'),
 
-    powerline("#ff7e7e", "#8c7eff"),
+    widget.BatteryIcon(**colors("#000000", "#2e2e2e"), scale=1.8, update_interval=1, theme_path='/home/hax00r/Downloads/repos/WhiteSur-light/status/16'), 
     
-    icon("󰌓", "Hack Nerd Font", 15, 10, "#8c7eff", "#212121"),
-
-    widget.KeyboardLayout(**colors("#8c7eff", "#212121"), configured_keyboards = ['us', 'latam']),
-
-    powerline("#8c7eff", "#c07eff"),
-
-    # widget.BatteryIcon(**colors("#c07eff", "#212121"), scale=1.8, update_interval=1),
-
     widget.Battery(
-        **colors("#c07eff", "#212121"),
+        font='SourceCodePro',
+        **colors("#000000", "#2e2e2e"),
         format='{char} {percent:2.0%}',
         update_interval=1,
         discharge_char=' ',
@@ -107,20 +113,21 @@ main_monitor_widgets = [
         full_char='',
         show_short_text=False
         ),
+    
 
-    powerline("#c07eff", "#7eb5ff"),
+    powerline("#000000", "#000000"),
 
-    icon("󰕾", "Hack Nerd Font", 15, 10, "#7eb5ff", "#212121"),
+    icon("󰕾", "Hack Nerd Font", 15, 10, "#000000", "#2e2e2e"),
 
-    widget.PulseVolume(**colors("#7eb5ff", "#212121")),
+    widget.PulseVolume(**colors("#000000", "#2e2e2e"), font='SourceCodePro'),
 
-    powerline("#7eb5ff", "#595959"),
+    powerline("#000000", "#000000"),
 
-    icon("󰥔", "Hack Nerd Font", 15, 10, "#595959", "#d8d2d2"),
+    icon("", "Hack Nerd Font", 15, 10, "#000000", "#2e2e2e"),
 
-    widget.Clock(**colors("#595959", "#d8d2d2"), format='%d/%m/%y %H:%M'),
+    widget.Clock(**colors("#000000", "#2e2e2e"), format='%H:%M', font='SourceCodePro'),
 
-    powerline("#595959", "#000000")
+    powerline("#000000", "#000000"),
 ]
 
 secondary_monitor_widgets = [ 
